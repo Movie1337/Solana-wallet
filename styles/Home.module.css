@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #000);
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #03dac6;
+}
+
+.button {
+  margin: 20px 0;
+  padding: 15px 30px;
+  background: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #3700b3;
+}
+
+.walletInfo {
+  max-width: 300px;
+  word-wrap: break-word;
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.transactionsLink {
+  margin-top: 20px;
+  color: #03dac5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.transactionsLink:hover {
+  color: #028a8a;
+}
+
+.copyable {
+  cursor: pointer;
+  color: #03dac5;
+  word-wrap: break-word;
+  transition: color 0.3s;
+}
+
+.copyable:hover {
+  color: #028a8a;
+}
+
+.updateIcon {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

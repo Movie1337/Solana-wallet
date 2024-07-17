@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Solana Wallet App
 
-## Getting Started
+## Описание
 
-First, run the development server:
+Приложение крипто-кошелька и перевода средств в сети Solana.
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+
+```bash
+git clone https://github.com/your-repo/solana-wallet.git
+cd solana-wallet
+```
+
+2. Установите зависимости:
+
+```bash
+npm install
+```
+
+3. Запустите локальный сервер:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Сборка приложения
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Настройка Solana CLI и пополнение кошелька
 
-## Learn More
+1. Скачайте Solana CLI для Windows:
 
-To learn more about Next.js, take a look at the following resources:
+Перейдите на страницу релизов Solana (https://github.com/solana-labs/solana/releases) и найдите последнюю версию. Скачайте установочный файл solana-install-init-x86_64-pc-windows-msvc.exe и перенесите его в папку, где открыт PowerShell.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Откройте PowerShell от имени администратора:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Win+X и выбрать PowerShell.
 
-## Deploy on Vercel
+3. Перейдите в каталог с загруженным файлом и выполните команду для установки:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+.\solana-install-init-x86_64-pc-windows-msvc.exe --data-dir C:\Users\Matvey\solana-wallet\data v1.9.4
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Перезапустите текущую оболочку, чтобы изменения PATH вступили в силу:
+
+Закройте текущую оболочку PowerShell и откройте новую.
+
+## Создание и настройка кошелька
+
+1. Настройка Solana CLI на Devnet:
+
+```bash
+solana config set --url https://api.devnet.solana.com
+```
+
+2. Создайте новый кошелек и сохраните ключи:
+
+```bash
+solana-keygen new -o C:\Users\Matvey\.config\solana\id.json
+```
+
+## Пополнение кошелька в PowerShell
+
+1. Пополните кошелек SOL в Devnet:
+
+```bash
+solana airdrop 2
+```
+
+2. Проверка баланса:
+
+```bash
+solana balance
+```
+
+## Пополнение нашего созданного кошелька
+
+```bash
+solana <RECIPIENT_ADDRESS> <AMOUNT> 1 --from C:\Users\Matvey\.config\solana\id.json --allow-unfunded-recipient
+```
+
+Обновляем наш кошелёк и видим пополнение. Затем можно отправить средства обратно.

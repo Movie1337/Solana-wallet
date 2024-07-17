@@ -1,0 +1,3 @@
+channel: v1.9.4
+commit: 8ce65878dad79d0aa48909bc36c1da74ea977baa
+target: x86_64-pc-windows-msvc
